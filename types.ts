@@ -37,3 +37,14 @@ export interface GroupSummary {
   avgAttendance: number;
   lastSessionAttendance: number;
 }
+
+export type ActivityType = 'ATTENDANCE_CHANGE' | 'MEMBER_ADD' | 'MEMBER_EDIT' | 'MEMBER_DELETE' | 'GROUP_ADD';
+
+export interface Activity {
+  id: string;
+  type: ActivityType;
+  description: string;
+  timestamp: number;
+  groupId: string;
+  revertData: any;
+}
